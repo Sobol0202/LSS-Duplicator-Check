@@ -1,55 +1,15 @@
 // ==UserScript==
 // @name         LSS Duplicate Finder
 // @namespace    LSS-Duplicate-Finder
-// @version      2
+// @version      3
 // @description  Adds buttons to find duplicate buildings and vehicles in LSS game.
 // @author       MissSobol
 // @match        https://www.leitstellenspiel.de/
 // @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
-
-    // create button to find duplicate buildings
-    let gbButton = document.createElement("button");
-    gbButton.innerHTML = "GB-Dup";
-    gbButton.style.fontSize = "0.5em";
-    gbButton.style.marginRight = "5px";
-    gbButton.onclick = function() {
-        let duplicates = lssmv4.$stores.api.buildings.filter(({caption}) => lssmv4.$stores.api.buildings.filter(({caption: scaption}) => scaption === caption).length > 1)
-          .sort().map(({caption, id}) => `${caption}: https://leitstellenspiel.de/buildings/${id}`);
-        if (duplicates.length === 0) {
-            let newTab = window.open();
-            newTab.document.body.innerHTML = "Du hast keine doppelten Gebäude.";
-        } else {
-            let content = duplicates.join('\n');
-            let newTab = window.open();
-            newTab.document.body.innerHTML = content.replace(/\n/g, "<br>");
-        }
-    };
-
-    // create button to find duplicate vehicles
-    let kzfButton = document.createElement("button");
-    kzfButton.innerHTML = "KFZ-Dup";
-    kzfButton.style.fontSize = "0.5em";
-    kzfButton.style.marginRight = "5px";
-    kzfButton.onclick = function() {
-        let duplicates = lssmv4.$stores.api.vehicles.filter(({caption}) => lssmv4.$stores.api.vehicles.filter(({caption: scaption}) => scaption === caption).length > 1)
-          .sort().map(({caption, building_id}) => `<a href='https://leitstellenspiel.de/buildings/${building_id}' target='_blank'>${caption}</a>`);
-        if (duplicates.length === 0) {
-            let newTab = window.open();
-            newTab.document.body.innerHTML = "Du hast keine doppelten Fahrzeuge.";
-        } else {
-            let content = duplicates.join('<br>');
-            let newTab = window.open();
-            newTab.document.body.innerHTML = content;
-        }
-    };
-
-    // add buttons to building panel heading
-    let buildingPanelHeading = document.getElementById("building_panel_heading");
-    buildingPanelHeading.appendChild(gbButton);
-    buildingPanelHeading.appendChild(kzfButton);
-
-})();
+//Lieber Scriptnutzer,
+//schweren Herzens habe ich heute alle meine Scripte deaktiviert. Der Betreiber hat mir meinen Forenaccount gesperrt, will mir aber weder verraten warum, noch ist man gewillt in Diskurs mit mir zu treten. Da ich ohne einen Forenaccount nicht das Level an Support geben kann, welches ich für mich selber als erforderlich betrachte, habe ich mit sofortiger Wirkung alle meine Scripte deaktiviert.
+//Ich bedanke mich für 5 Jahre Zusammenarbeit im Forum. Danke an alle, die meine Scripte genutzt haben, Daumen dagelassen haben und Kommentare geschrieben haben.
+//Liebe Grüße und noch viel Spaß
+//Sobol
